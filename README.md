@@ -45,3 +45,6 @@ I would improve the error reporting of the API in terms of what messages it is s
 
 ## User input
 Of course we need to properly check whether the fields are valid, or define them as required in the DB schema.
+
+## Over two hours
+Unfortunatelly, I busted myself on the Golang docker image not having set the $GOROOT and $GOBIN paths by default, which caused the multistage build to fail, so I just used plain `go build`. Then my tests stopped working because the DB had issues with pathing as well.
