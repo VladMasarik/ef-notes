@@ -35,7 +35,7 @@ I have a package-wide DB client, as I prefer to always have just a single way of
 ## API versioning
 I have exposed everything right at the root, and without any API versioning. Up to a discussion on how we want to version the API, whether through URL or headers, and especially where we want to have it exposes
 
-# Comments / descriptions
+## Comments / descriptions
 I have not added package comments as I think they are obvious.
 
 ## API responses
@@ -46,5 +46,5 @@ I would improve the error reporting of the API in terms of what messages it is s
 ## User input
 Of course we need to properly check whether the fields are valid, or define them as required in the DB schema.
 
-## Over two hours
-Unfortunatelly, I busted myself on the Golang docker image not having set the $GOROOT and $GOBIN paths by default, which caused the multistage build to fail, so I just used plain `go build`. Then my tests stopped working because the DB had issues with pathing as well.
+## Technologies
+I chose Gorm and Gin especially because they are light, and pretty much perfect for very basic CRUD APIs. Overall though, I would use a relevant DB client based on the DB we would be using instead of Gorm. I would stay with Gin unless we want something more advanced in which case I would reconsider the Fiber, Gorilla or Revel.
